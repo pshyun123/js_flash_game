@@ -34,7 +34,7 @@ class Cactus {
   }
 }
 
-// 코드 1초에 60번 실행
+// 코드 1초
 var timer = 0;
 var cactuses = [];
 
