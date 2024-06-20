@@ -15,10 +15,16 @@ var dino = {
   width: 50,
   height: 50,
   draw() {
-    ctx.fillStyle = "black";
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    // ctx.fillStyle = "black";
+    // ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.drawImage(img2, this.x, this.y, this.width, this.height);
   },
 };
+
+var img1 = new Image();
+img1.src = "cactus.png";
+var img2 = new Image();
+img2.src = "dino.png";
 
 // 장애물
 class Cactus {
@@ -29,9 +35,20 @@ class Cactus {
     this.height = 50;
   }
   draw() {
-    ctx.fillStyle = "red";
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    // ctx.fillStyle = "red";
+    // ctx.fillRect(this.x, this.y, this.width, this.height); //히트박스
+    ctx.drawImage(img1, this.x, this.y, this.width, this.height);
   }
+}
+
+// 땅처럼 보일 가로선 그리기
+function drawGroundLine() {
+  ctx.beginPath();
+  ctx.moveTo(0, canvas.height - 50); // 시작점
+  ctx.lineTo(canvas.width, canvas.height - 50); // 끝점
+  ctx.strokeStyle = "black";
+  ctx.lineWidth = 2;
+  ctx.stroke();
 }
 
 // 코드 1초
