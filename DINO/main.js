@@ -40,17 +40,6 @@ class Cactus {
     ctx.drawImage(img1, this.x, this.y, this.width, this.height);
   }
 }
-
-// 땅처럼 보일 가로선 그리기
-function drawGroundLine() {
-  ctx.beginPath();
-  ctx.moveTo(0, canvas.height - 50); // 시작점
-  ctx.lineTo(canvas.width, canvas.height - 50); // 끝점
-  ctx.strokeStyle = "black";
-  ctx.lineWidth = 2;
-  ctx.stroke();
-}
-
 // 코드 1초
 var timer = 0;
 var cactuses = [];
